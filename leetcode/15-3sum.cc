@@ -48,15 +48,17 @@ public:
         vector<int> temp(3);
         unordered_set<vector<int>, VectorHash> result_set;
         const auto nums_end = nums.end();
-        for (auto i = nums.begin(); i != nums_end - 2; ++i)
+        for (auto i = nums.begin(); i != nums_end - 2; ++i) {
+            const auto x_i = *i;
             for (auto j = i + 1; j != nums_end - 1; ++j) {
-                const auto x_i = *i, x_j = *j, x_k = - x_i - x_j;
+                const auto x_j = *j, x_k = - x_i - x_j;
                 if (x_k >= x_j && binary_search(j + 1, nums_end, x_k)) {
                     temp = {x_i, x_j, x_k};
                     if (result_set.find(temp) == result_set.end())
                         result_set.insert(temp);
                 }
             }
+        }
 
         vector<vector<int>> result;
         for (const auto & i: result_set) {
