@@ -5,7 +5,7 @@
 
 /**
  * Definition for singly-linked list.
- * @param {number} val 
+ * @param {number} val
  */
 function ListNode(val) {
     this.val = val;
