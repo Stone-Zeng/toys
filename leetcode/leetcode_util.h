@@ -15,6 +15,15 @@ inline std::string to_string(std::string val) {
     return val;
 }
 
+inline std::string to_string(char c) {
+    std::string s(1, c); 
+    return s;
+}
+
+inline std::string to_string(bool b) {
+    return b ? "True" : "False";
+}
+
 template <class T>
 inline std::string to_string(std::vector<T> v, std::string joiner=",") {
     if (v.empty()) return "[]";
