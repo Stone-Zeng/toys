@@ -12,6 +12,16 @@ struct _ListNode {
     T val;
     _ListNode * next;
     _ListNode(int x) : val(x), next(nullptr) {}
+    _ListNode(const std::initializer_list<T> & list) {
+        if (list.size() != 0) {
+            auto p = this;
+            p->val = *list.begin();
+            for (auto i = list.begin() + 1; i != list.end(); ++i) {
+                p->next = new _ListNode<T>(*i);
+                p = p->next;
+            }
+        }
+    }
 };
 
 typedef _ListNode<int> ListNode;

@@ -3,14 +3,9 @@
 
 #include <iostream>
 #include <unordered_set>
+#include "leetcode_util.h"
 using namespace std;
-
-// Definition for singly-linked list.
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(nullptr) {}
-};
+using leetcode::ListNode;
 
 class Solution {
 public:
@@ -40,35 +35,21 @@ void printListNode(const ListNode* head, int len=10) {
 int main() {
     Solution sol;
 
-    auto head1 = new ListNode(3);
-    head1->next = new ListNode(2);
-    head1->next->next = new ListNode(0);
-    head1->next->next->next = new ListNode(-4);
-    head1->next->next->next->next = head1->next;
-    printListNode(head1);
-    cout << boolalpha << sol.hasCycle(head1) << endl;
-    delete head1->next->next->next;
-    delete head1->next->next;
-    delete head1->next;
-    delete head1;
+    auto head = new ListNode{3,2,0,-4};
+    head->next->next->next->next = head->next;
+    printListNode(head);
+    cout << boolalpha << sol.hasCycle(head) << endl;
 
-    auto head2 = new ListNode(3);
-    head2->next = new ListNode(2);
-    head2->next->next = new ListNode(0);
-    printListNode(head2);
-    cout << boolalpha << sol.hasCycle(head2) << endl;
-    delete head2->next->next->next;
-    delete head2->next->next;
-    delete head2->next;
-    delete head2;
+    head = new ListNode{3,2,0};
+    printListNode(head);
+    cout << boolalpha << sol.hasCycle(head) << endl;
 
-    auto head3 = new ListNode(1);
-    head3->next = head3;
-    printListNode(head3);
-    cout << boolalpha << sol.hasCycle(head3) << endl;
-    delete head3;
+    head = new ListNode(1);
+    head->next = head;
+    printListNode(head);
+    cout << boolalpha << sol.hasCycle(head) << endl;
 
-    auto head4 = nullptr;
-    printListNode(head4);
-    cout << boolalpha << sol.hasCycle(head4) << endl;
+    head = nullptr;
+    printListNode(head);
+    cout << boolalpha << sol.hasCycle(head) << endl;
 }
