@@ -2,7 +2,6 @@
 https://leetcode.com/problems/roman-to-integer/
 """
 
-
 class Solution:
     ROMAN_PAIR = [
         "II", "IV", "IX",
@@ -37,7 +36,6 @@ class Solution:
             result += self.ROMAN_INT_MAP[i]
 
         return result
-
 
 def _test():
     sol = Solution()

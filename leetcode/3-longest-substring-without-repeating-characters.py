@@ -2,7 +2,6 @@
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 """
 
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         sub_str = s
@@ -15,7 +14,6 @@ class Solution:
                 sub_str = s[i:]
             sub_str_len = max(sub_str_len, len(sub_str))
         return sub_str_len
-
 
 s = Solution()
 print(s.lengthOfLongestSubstring("abcabcbb"))

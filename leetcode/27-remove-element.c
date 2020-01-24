@@ -17,7 +17,6 @@ int removeElement(int* nums, int numsSize, int val) {
     return numsSize - count;
 }
 
-
 int main() {
     int test1[] = {1,2,3,4,2,2,5,6};
     int test2[] = {1,1,1};

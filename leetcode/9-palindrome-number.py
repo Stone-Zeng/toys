@@ -4,7 +4,6 @@ https://leetcode.com/problems/palindrome-number/
 
 import math
 
-
 class Solution:
     def isPalindrome(self, x):
         """

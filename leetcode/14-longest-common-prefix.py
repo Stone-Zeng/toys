@@ -2,7 +2,6 @@
 https://leetcode.com/problems/longest-common-prefix/
 """
 
-
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
         if len(strs) == 0:

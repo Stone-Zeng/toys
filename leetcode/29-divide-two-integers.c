@@ -114,7 +114,6 @@ int main() {
     TEST(MIN_INT+1,  1);
     TEST(MIN_INT+1,  2);
 
-
     TEST(MIN_INT, MIN_INT);
     TEST(MIN_INT, MAX_INT);
     TEST(-1010369383, -2147483648);

@@ -53,7 +53,6 @@ var _addNumber = function(list, flag) {
     return list;
 }
 
-
 var _show = function(list) {
     if (list === null) return null;
     var [result, i] = [list.val, list.next];

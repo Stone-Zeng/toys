@@ -4,7 +4,6 @@ https://leetcode.com/problems/reverse-integer/
 
 import re
 
-
 class Solution:
     MAX_INT = 2147483648
 
