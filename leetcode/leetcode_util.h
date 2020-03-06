@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 namespace leetcode {
 
@@ -44,6 +45,7 @@ inline std::string to_string(bool b) {
     return b ? "True" : "False";
 }
 
+// std::vector
 template <class T>
 inline std::string to_string(
         std::vector<T> v,
@@ -56,6 +58,23 @@ inline std::string to_string(
     return braces.first + s + to_string(v.back()) + braces.second;
 }
 
+// std::map
+template <class K, class V>
+inline std::string to_string(
+        std::map<K, V> m,
+        std::string joiner=",",
+        std::string separator=":",
+        std::pair<std::string, std::string> braces={"{", "}"}) {
+    if (m.empty()) return braces.first + braces.second;
+    std::string s;
+    // for (auto iter = m.begin(); iter < m.end() - 1; ++iter)
+    //     s += to_string(*iter) + joiner;
+    for (const auto & i : m)
+        s += to_string(i.first) + separator + to_string(i.second) + joiner;
+    return braces.first + s + braces.second;
+}
+
+// leetcode::_ListNode
 template <class T>
 inline std::string to_string(
         _ListNode<T> * head,
