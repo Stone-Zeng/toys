@@ -1,14 +1,12 @@
 // 202. Happy Number
 // https://leetcode.com/problems/happy-number/
 
-use std::collections::HashSet;
-
 struct Solution { }
 
 impl Solution {
     pub fn is_happy(n: i32) -> bool {
         let mut m = n;
-        let mut set = HashSet::new();
+        let mut set = std::collections::HashSet::new();
         loop {
             set.insert(m);
             if m == 1 { return true; }
