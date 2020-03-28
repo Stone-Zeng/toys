@@ -17,10 +17,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{:?}", Solution::get_row(0));
-    println!("{:?}", Solution::get_row(1));
-    println!("{:?}", Solution::get_row(2));
-    println!("{:?}", Solution::get_row(3));
-    println!("{:?}", Solution::get_row(4));
-    println!("{:?}", Solution::get_row(33));
+    for i in &[0, 1, 2, 3, 4, 33] {
+        println!("{:?}", Solution::get_row(*i));
+    }
 }

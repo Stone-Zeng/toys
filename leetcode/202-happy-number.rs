@@ -26,8 +26,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{:?}", Solution::is_happy(19));
-    println!("{:?}", Solution::is_happy(10));
-    println!("{:?}", Solution::is_happy(61));
-    println!("{:?}", Solution::is_happy(1122334387));
+    for i in &[19, 10, 61, 1122334387] {
+        println!("{:?}", Solution::is_happy(*i));
+    }
 }

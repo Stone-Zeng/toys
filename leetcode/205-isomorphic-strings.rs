@@ -24,8 +24,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{}", Solution::is_isomorphic("ab".to_string(), "aa".to_string()));
-    println!("{}", Solution::is_isomorphic("egg".to_string(), "add".to_string()));
-    println!("{}", Solution::is_isomorphic("foo".to_string(), "bar".to_string()));
-    println!("{}", Solution::is_isomorphic("paper".to_string(), "title".to_string()));
+    for i in &[("ab", "aa"), ("egg", "add"), ("foo", "bar"), ("paper", "title")] {
+        println!("{}", Solution::is_isomorphic((*i.0).to_string(), (*i.1).to_string()));
+    }
 }

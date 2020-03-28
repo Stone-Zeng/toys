@@ -19,11 +19,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{}", Solution::is_power_of_two(0));
-    println!("{}", Solution::is_power_of_two(-1));
-    println!("{}", Solution::is_power_of_two(1));
-    println!("{}", Solution::is_power_of_two(16));
-    println!("{}", Solution::is_power_of_two(218));
-    println!("{}", Solution::is_power_of_two(1073741824));
-    println!("{}", Solution::is_power_of_two(2147483647));
+    for i in &[0, -1, 1, 16, 218, 1073741824, 2147483647] {
+        println!("{}", Solution::is_power_of_two(*i));
+    }
 }

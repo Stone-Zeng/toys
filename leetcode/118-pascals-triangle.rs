@@ -21,10 +21,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{:?}", Solution::generate(0));
-    println!("{:?}", Solution::generate(1));
-    println!("{:?}", Solution::generate(2));
-    println!("{:?}", Solution::generate(3));
-    println!("{:?}", Solution::generate(4));
-    println!("{:?}", Solution::generate(30));
+    for i in &[0, 1, 2, 3, 4, 30] {
+        println!("{:?}", Solution::generate(*i));
+    }
 }

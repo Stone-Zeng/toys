@@ -18,8 +18,12 @@ impl Solution {
 }
 
 fn main() {
-    println!("{}", Solution::contains_duplicate(vec![]));
-    println!("{}", Solution::contains_duplicate(vec![1,2,3,1]));
-    println!("{}", Solution::contains_duplicate(vec![1,2,3,4]));
-    println!("{}", Solution::contains_duplicate(vec![1,1,1,3,3,4,3,2,4,2]));
+    for i in &[
+        vec![],
+        vec![1,2,3,1],
+        vec![1,2,3,4],
+        vec![1,1,1,3,3,4,3,2,4,2],
+    ] {
+        println!("{}", Solution::contains_duplicate(i.to_vec()));
+    }
 }

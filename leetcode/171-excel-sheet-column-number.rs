@@ -12,8 +12,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{}", Solution::title_to_number("".to_string()));
-    println!("{}", Solution::title_to_number("A".to_string()));
-    println!("{}", Solution::title_to_number("AB".to_string()));
-    println!("{}", Solution::title_to_number("ZY".to_string()));
+    for i in &["", "A", "AB", "ZY"] {
+        println!("{}", Solution::title_to_number(i.to_string()));
+    }
 }

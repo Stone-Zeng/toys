@@ -16,11 +16,7 @@ impl Solution {
 }
 
 fn main() {
-    println!("{}", Solution::trailing_zeroes(0));
-    println!("{}", Solution::trailing_zeroes(3));
-    println!("{}", Solution::trailing_zeroes(5));
-    println!("{}", Solution::trailing_zeroes(27));
-    println!("{}", Solution::trailing_zeroes(270));
-    println!("{}", Solution::trailing_zeroes(1000));
-    println!("{}", Solution::trailing_zeroes(1808548329));
+    for i in &[0, 3, 5, 27, 270, 1000, 1808548329] {
+        println!("{}", Solution::trailing_zeroes(*i));
+    }
 }
