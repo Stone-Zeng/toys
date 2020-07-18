@@ -28,11 +28,16 @@ struct _ListNode {
 typedef _ListNode<int> ListNode;
 
 template <class T>
-inline std::string to_string(T val) {
+inline std::string to_string(const T & val) {
     return std::to_string(val);
 }
 
-inline std::string to_string(std::string val) {
+inline std::string to_string(const char * val) {
+    std::string s = val;
+    return s;
+}
+
+inline std::string to_string(const std::string & val) {
     return val;
 }
 
@@ -48,13 +53,13 @@ inline std::string to_string(bool b) {
 // std::vector
 template <class T>
 inline std::string to_string(
-        std::vector<T> v,
-        std::string joiner=",",
-        std::pair<std::string, std::string> braces={"[", "]"}) {
+        const std::vector<T> & v,
+        const std::string & joiner=",",
+        const std::pair<std::string, std::string> & braces={"[", "]"}) {
     if (v.empty()) return braces.first + braces.second;
     std::string s;
-    for (auto iter = v.begin(); iter < v.end() - 1; ++iter)
-        s += to_string(*iter) + joiner;
+    for (auto iter = v.cbegin(); iter < v.cend() - 1; ++iter)
+        s += to_string(*iter) + ",";
     return braces.first + s + to_string(v.back()) + braces.second;
 }
 
@@ -67,11 +72,31 @@ inline std::string to_string(
         std::pair<std::string, std::string> braces={"{", "}"}) {
     if (m.empty()) return braces.first + braces.second;
     std::string s;
-    // for (auto iter = m.begin(); iter < m.end() - 1; ++iter)
-    //     s += to_string(*iter) + joiner;
     for (const auto & i : m)
         s += to_string(i.first) + separator + to_string(i.second) + joiner;
     return braces.first + s + braces.second;
+}
+
+// std::pair
+template <class T1, class T2>
+inline std::string to_string(
+        const std::pair<T1, T2> & p,
+        const std::string & joiner=",",
+        const std::pair<std::string, std::string> & braces={"(", ")"}) {
+    return braces.first + to_string(p.first) + joiner + to_string(p.second) + braces.second;
+}
+
+// TODO: std::vector<std::pair>>
+template <class T1, class T2>
+inline std::string to_string(
+        const std::vector<std::pair<T1, T2>> & v,
+        const std::string & joiner=",",
+        const std::pair<std::string, std::string> & braces={"[", "]"}) {
+    if (v.empty()) return braces.first + braces.second;
+    std::string s;
+    for (auto iter = v.cbegin(); iter < v.cend() - 1; ++iter)
+        s += to_string<T1, T2>(*iter) + ",";
+    return braces.first + s + to_string(v.back()) + braces.second;
 }
 
 // leetcode::_ListNode
