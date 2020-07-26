@@ -1,5 +1,5 @@
-// 11. Container With Most Water
-// https://leetcode.com/problems/container-with-most-water/
+// 6. ZigZag Conversion
+// https://leetcode.com/problems/zigzag-conversion/
 
 #include <iostream>
 #include <string>
