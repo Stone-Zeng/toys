@@ -59,7 +59,7 @@ inline std::string to_string(
     if (v.empty()) return braces.first + braces.second;
     std::string s;
     for (auto iter = v.cbegin(); iter < v.cend() - 1; ++iter)
-        s += to_string(*iter) + ",";
+        s += to_string(*iter) + joiner;
     return braces.first + s + to_string(v.back()) + braces.second;
 }
 
@@ -95,7 +95,7 @@ inline std::string to_string(
     if (v.empty()) return braces.first + braces.second;
     std::string s;
     for (auto iter = v.cbegin(); iter < v.cend() - 1; ++iter)
-        s += to_string<T1, T2>(*iter) + ",";
+        s += to_string<T1, T2>(*iter) + joiner;
     return braces.first + s + to_string(v.back()) + braces.second;
 }
 
